@@ -9,7 +9,7 @@
   ![language](https://img.shields.io/github/languages/top/OuYuHuaXia/Website-FE)
   ![last](https://img.shields.io/github/last-commit/OuYuHuaXia/Website-FE)
   
-  <a href="https://muxi-bar.vercel.app/" target="_blank">在线体验</a>
+  <a href="https://ouyuhuaxia.vercel.app/" target="_blank">在线体验</a>
   ·
   <a href="https://github.com/OuYuHuaXia/Website-FE/issues">报告Bug</a>
   ·
