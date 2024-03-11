@@ -242,7 +242,7 @@ const projects: TProject[] = [
       },
     ],
     image: jobit,
-    sourceCodeLink: "https://github.com/",
+    sourceCodeLink: "https://github.com/OuYuHuaXia/OuYuHuaXia-Android",
   },
   {
     name: "后端服务",
