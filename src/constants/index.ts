@@ -185,7 +185,7 @@ const testimonials: TTestimonial[] = [
     name: "谢伟",
     designation: "副院长",
     company: "华中师范大学计算机学院",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+    image: "https://i.im.ge/2024/03/11/R1PDJY.6.jpg",
   },
   {
     testimonial:
@@ -193,7 +193,7 @@ const testimonials: TTestimonial[] = [
     name: "孙昊",
     designation: "教授",
     company: "华中师范大学计算机学院",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
+    image: "https://i.im.ge/2024/03/11/R1PUN4.3275b4e01d477b1e12ae24afc817908d.jpg",
   },
   {
     testimonial:
@@ -225,7 +225,7 @@ const projects: TProject[] = [
       },
     ],
     image: carrent,
-    sourceCodeLink: "https://github.com/",
+    sourceCodeLink: "https://github.com/OuYuHuaXia/Website-FE",
   },
   {
     name: "移动应用",
@@ -263,7 +263,7 @@ const projects: TProject[] = [
       },
     ],
     image: tripguide,
-    sourceCodeLink: "https://github.com/",
+    sourceCodeLink: "https://github.com/KitZhangYs/oyhx-backend",
   },
 ];
 
