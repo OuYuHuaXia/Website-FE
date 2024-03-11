@@ -200,8 +200,8 @@ const testimonials: TTestimonial[] = [
       "[测试文本]Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse elementum orci eu viverra mollis.",
     name: "赵金统",
     designation: "团长",
-    company: "忘了什么剧团",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
+    company: "金宇园掌中剧团",
+    image: "https://i.im.ge/2024/03/11/R1Vsv4.2024-03-11-195647.png",
   },
 ];
 
