@@ -52,7 +52,9 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="text-secondary mt-4 max-w-3xl text-[17px] leading-[30px]"
       >
-        {config.sections.about.content}
+        &emsp;&emsp;{config.sections.about.content}
+        <br/>
+        &emsp;&emsp;{config.sections.about.content2}
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10 max-sm:justify-center">
