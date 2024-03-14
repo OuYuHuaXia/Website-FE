@@ -207,7 +207,7 @@ const projects: TProject[] = [
   {
     name: '团队网站',
     description:
-      '[测试文本]Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse elementum orci eu viverra mollis.',
+      '网页选择 Next.js 作为开发框架，实现服务器渲染和静态网站生成，确保网页具有出色的性能和可优化性。同时引入了 TypeScript，此静态类型超集将有助开发过程中捕获潜在的错误，提供更好的代码编辑和自动完成功能。并使用 Tailwind CSS 和 Sass 更高效地管理样式，增强样式定制的灵活性的和可重用性。同时集成了 Three.js 实现 3D 渲染，并引入 Framer Motion 为网页添加流畅的动画和交互效果。',
     tags: [
       {
         name: 'nextjs',

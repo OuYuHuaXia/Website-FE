@@ -27,7 +27,11 @@ const Hero = () => {
       </div>
 
       {/* <ComputersCanvas /> */}
-      <img className="opacity-35 w-full h-full" src={'https://i.im.ge/2024/03/14/RiaJHy.image-4.png'} alt="Hero" />
+      <img
+        className="opacity-35 w-full h-full from"
+        src='https://i.im.ge/2024/03/14/RiaJHy.image-4.png'
+        alt="Hero"
+      />
 
       <div className="xs:bottom-10 absolute bottom-32 flex w-full items-center justify-center">
         <a href="#about">
