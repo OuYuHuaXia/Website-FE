@@ -47,8 +47,8 @@ type TConfig = {
 
 export const config: TConfig = {
   html: {
-    title: '偶遇华夏',
-    fullName: '偶遇华夏',
+    title: '知音华夏 - 偶遇无处不在',
+    fullName: '知音华夏 - 偶遇无处不在',
     email: 's5460703@gmail.com',
   },
   hero: {
