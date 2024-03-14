@@ -1,8 +1,8 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
-import { styles } from "../../constants/styles";
-import { ComputersCanvas } from "../canvas";
-import { config } from "../../constants/config";
+import { styles } from '../../constants/styles';
+// import { ComputersCanvas } from "../canvas";
+import { config } from '../../constants/config';
 
 const Hero = () => {
   return (
@@ -26,7 +26,8 @@ const Hero = () => {
         </div>
       </div>
 
-      <ComputersCanvas />
+      {/* <ComputersCanvas /> */}
+      <img className="opacity-35 w-full h-full" src={'https://i.im.ge/2024/03/14/RiaJHy.image-4.png'} alt="Hero" />
 
       <div className="xs:bottom-10 absolute bottom-32 flex w-full items-center justify-center">
         <a href="#about">
@@ -38,7 +39,7 @@ const Hero = () => {
               transition={{
                 duration: 1.5,
                 repeat: Infinity,
-                repeatType: "loop",
+                repeatType: 'loop',
               }}
               className="bg-secondary mb-1 h-3 w-3 rounded-full"
             />
