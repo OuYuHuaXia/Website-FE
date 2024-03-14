@@ -73,7 +73,7 @@ const Works = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className="text-secondary mt-3 max-w-3xl text-[17px] leading-[30px]"
         >
-          {config.sections.works.content}
+          &emsp;&emsp;{config.sections.works.content}
         </motion.p>
       </div>
 

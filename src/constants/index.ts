@@ -126,18 +126,18 @@ const technologies: TTechnology[] = [
 const experiences: TExperience[] = [
   {
     title: '项目立项',
-    companyName: '副标题 1',
+    companyName: '探索项目潜力',
     icon: starbucks,
     iconBg: '#383E56',
-    date: 'March 2020 - April 2021',
+    date: 'Dec 2022 - Mar 2023',
     points: ['前期项目调查', '研讨创新点', '进行分工'],
   },
   {
     title: '签约合作协议书',
-    companyName: '副标题 2',
+    companyName: '拓展合作网络',
     icon: tesla,
     iconBg: '#E6DEDD',
-    date: 'Jan 2021 - Feb 2022',
+    date: 'Apr 2023 - Aug 2023',
     points: [
       '学习项目技术',
       '与台湾掌中剧团签订合作协议书',
@@ -147,10 +147,10 @@ const experiences: TExperience[] = [
   },
   {
     title: '项目打磨',
-    companyName: '副标题 3',
+    companyName: '提升项目实力',
     icon: shopify,
     iconBg: '#383E56',
-    date: 'Jan 2022 - Jan 2023',
+    date: 'Sep 2023 - Dec 2023',
     points: [
       '参访台湾掌中剧团',
       '项目打磨：优化项目设计和实施方案',
@@ -160,10 +160,10 @@ const experiences: TExperience[] = [
   },
   {
     title: '项目尾声',
-    companyName: '副标题 4',
+    companyName: '完善项目收尾',
     icon: meta,
     iconBg: '#E6DEDD',
-    date: 'Jan 2023 - Present',
+    date: 'Jan 2024 - Mar 2024',
     points: ['申请软件著作权', '项目进行最后的调整和优化', '整合各项技术'],
   },
 ];
@@ -228,7 +228,7 @@ const projects: TProject[] = [
   {
     name: '移动应用',
     description:
-      '[测试文本]Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse elementum orci eu viverra mollis.',
+      '采用了 MVC 模式将数据处理、用户界面和控制逻辑分离，提高代码的可维护性和扩展性。并使用了 Retrofit 框架，有效处理网络请求和数据交互。RecyclerView 可有效显示大量数据，并支持各种布局和交互方式，创建灵活的视图列表，以适应不同屏幕尺寸和设备方向。同时采用了 RadioGroup + ViewPager 的结构，使用户能够轻松切换不同的视图页面，并通过导航栏快速导航到应用的不同部分。',
     tags: [
       {
         name: 'java',
@@ -245,18 +245,18 @@ const projects: TProject[] = [
   {
     name: '后端服务',
     description:
-      '[测试文本]Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse elementum orci eu viverra mollis.',
+      '采用了单体服务模式，并选择了 Gin 框架作为核心组件来处理外部请求和暴露接口。Gin 是一个基于 Go 语言开发的轻量级 Web 框架，提供了路由、中间件、参数解析等功能，使开发者能够快速构建高性能的 RESTful API。同时使用 Gorm 框架与 MySQL 数据库进行交互，简化了数据访问层的开发。Gorm 是一个强大的 ORM 库，提供了数据库模型定义、查询构建、事务处理等功能，以面向对象的方式操作数据库，极大地简化了数据访问层的开发工作。',
     tags: [
       {
         name: 'go',
         color: 'blue-text-gradient',
       },
       {
-        name: '123',
+        name: 'gin',
         color: 'green-text-gradient',
       },
       {
-        name: '123',
+        name: 'grom',
         color: 'pink-text-gradient',
       },
     ],

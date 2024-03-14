@@ -88,16 +88,8 @@ export const config: TConfig = {
     works: {
       p: '我们的伟大作品',
       h2: '应用程序',
-      content: `(我叫你填)[测试文本]Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-      Suspendisse elementum orci eu viverra mollis. 
-      Maecenas mollis diam vel dignissim porttitor. 
-      Vestibulum id maximus eros. Nunc imperdiet nisi ac augue maximus viverra. 
-      Morbi feugiat nisl ante, nec fringilla est iaculis sed. Praesent in lobortis justo. Praesent feugiat, 
-      justo eu lobortis commodo, orci arcu fermentum urna, vel varius nibh est ut neque. 
-      Duis commodo lacus augue, eget luctus leo sollicitudin at. 
-      Duis id erat sit amet nulla elementum tempor et in ligula. Pellentesque vitae mi mauris. 
-      Suspendisse a leo id dolor dictum vestibulum. Pellentesque ultricies interdum iaculis. 
-      Fusce risus diam, hendrerit at maximus at, lacinia vel urna.`,
+      content: `针对目前传统木偶戏传播方式少，传承不易，体验感差等诸多问题，我们在初期研究了人体动作捕捉和 3D 建模相关文献。使用了基于 Mediapipe 框架的人体动作捕捉技术，实现对于传统木偶戏的数字化模拟和操作简化。对于木偶戏文化的传播，我们通过构建 “偶”遇华夏 APP 来向更多人科普相关知识。在安卓端，选用 MVC（Model-View-Controller）模式分离应用的不同组成部分，提高可维护性和扩展性。利用 Retrofit 框架处理网络请求和数据交互，选用 RadioGroup + ViewPager 结构实现导航栏。在后端部分，采用单体服务模式，Gin 框架处理外部请求和接口暴露，Gorm 与 MySQL 数据库交互，Apifox 进行接口测试和管理。
+      `,
     },
   },
 };
