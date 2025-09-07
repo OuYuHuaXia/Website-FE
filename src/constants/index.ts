@@ -8,10 +8,6 @@ import type {
 } from '../types';
 
 import {
-  mobile,
-  backend,
-  creator,
-  web,
   javascript,
   typescript,
   html,
@@ -31,6 +27,10 @@ import {
   carrent,
   tripguide,
   threejs,
+  cultureIcon,
+  videoIcon,
+  experienceIcon,
+  profileIcon,
 } from '../assets';
 
 export const navLinks: TNavLink[] = [
@@ -51,19 +51,19 @@ export const navLinks: TNavLink[] = [
 const services: TService[] = [
   {
     title: '文化科普',
-    icon: web,
+    icon: cultureIcon,
   },
   {
     title: '片段欣赏',
-    icon: mobile,
+    icon: videoIcon,
   },
   {
     title: '情景体验',
-    icon: backend,
+    icon: experienceIcon,
   },
   {
     title: '个人中心',
-    icon: creator,
+    icon: profileIcon,
   },
 ];
 
