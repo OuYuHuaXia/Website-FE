@@ -1,6 +1,7 @@
 import React from "react";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 import { services } from "../../constants";
 import { SectionWrapper } from "../../hoc";
@@ -14,34 +15,50 @@ interface IServiceCard {
   icon: string;
 }
 
-const ServiceCard: React.FC<IServiceCard> = ({ index, title, icon }) => (
-  <Tilt
-    glareEnable
-    tiltEnable
-    tiltMaxAngleX={30}
-    tiltMaxAngleY={30}
-    glareColor="#aaa6c3"
-  >
-    <div className="xs:w-[250px] w-full">
-      <motion.div
-        variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-        className="green-pink-gradient shadow-card w-full rounded-[20px] p-[1px]"
-      >
-        <div className="bg-tertiary flex min-h-[280px] flex-col items-center justify-evenly rounded-[20px] px-12 py-5">
-          <img
-            src={icon}
-            alt="web-development"
-            className="h-16 w-16 object-contain"
-          />
+const ServiceCard: React.FC<IServiceCard> = ({ index, title, icon }) => {
+  const navigate = useNavigate();
 
-          <h3 className="text-center text-[20px] font-bold text-white">
-            {title}
-          </h3>
-        </div>
-      </motion.div>
-    </div>
-  </Tilt>
-);
+  const handleClick = () => {
+    if (title === '文化科普') {
+      navigate('/culture');
+    }
+    // 其他卡片暂时不处理点击事件
+  };
+
+  return (
+    <Tilt
+      glareEnable
+      tiltEnable
+      tiltMaxAngleX={30}
+      tiltMaxAngleY={30}
+      glareColor="#aaa6c3"
+    >
+      <div className="xs:w-[250px] w-full">
+        <motion.div
+          variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+          className="green-pink-gradient shadow-card w-full rounded-[20px] p-[1px]"
+        >
+          <div 
+            className={`bg-tertiary flex min-h-[280px] flex-col items-center justify-evenly rounded-[20px] px-12 py-5 ${
+              title === '文化科普' ? 'cursor-pointer hover:bg-tertiary/80 transition-colors' : ''
+            }`}
+            onClick={handleClick}
+          >
+            <img
+              src={icon}
+              alt="web-development"
+              className="h-16 w-16 object-contain"
+            />
+
+            <h3 className="text-center text-[20px] font-bold text-white">
+              {title}
+            </h3>
+          </div>
+        </motion.div>
+      </div>
+    </Tilt>
+  );
+};
 
 const About = () => {
   return (

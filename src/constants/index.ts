@@ -29,7 +29,6 @@ import {
   tesla,
   shopify,
   carrent,
-  jobit,
   tripguide,
   threejs,
 } from '../assets';
@@ -51,19 +50,19 @@ export const navLinks: TNavLink[] = [
 
 const services: TService[] = [
   {
-    title: '网页应用开发',
+    title: '文化科普',
     icon: web,
   },
   {
-    title: '移动端应用开发',
+    title: '片段欣赏',
     icon: mobile,
   },
   {
-    title: '后端开发',
+    title: '情景体验',
     icon: backend,
   },
   {
-    title: '文创内容与产品',
+    title: '个人中心',
     icon: creator,
   },
 ];
@@ -129,7 +128,7 @@ const experiences: TExperience[] = [
     companyName: '探索项目潜力',
     icon: starbucks,
     iconBg: '#383E56',
-    date: 'Dec 2022 - Mar 2023',
+    date: 'Dec 2024 - Mar 2025',
     points: ['前期项目调查', '研讨创新点', '进行分工'],
   },
   {
@@ -137,12 +136,10 @@ const experiences: TExperience[] = [
     companyName: '拓展合作网络',
     icon: tesla,
     iconBg: '#E6DEDD',
-    date: 'Apr 2023 - Aug 2023',
+    date: 'Apr 2025 - Aug 2025',
     points: [
       '学习项目技术',
       '与台湾掌中剧团签订合作协议书',
-      '项目进校园：枫叶红幼稚园',
-      '参加挑战杯等多项赛事',
     ],
   },
   {
@@ -150,12 +147,11 @@ const experiences: TExperience[] = [
     companyName: '提升项目实力',
     icon: shopify,
     iconBg: '#383E56',
-    date: 'Sep 2023 - Dec 2023',
+    date: 'Sep 2025 - Dec 2025',
     points: [
       '参访台湾掌中剧团',
       '项目打磨：优化项目设计和实施方案',
       '更新技术',
-      '在计算机设计大赛、小挑获得成绩',
     ],
   },
   {
@@ -163,51 +159,27 @@ const experiences: TExperience[] = [
     companyName: '完善项目收尾',
     icon: meta,
     iconBg: '#E6DEDD',
-    date: 'Jan 2024 - Mar 2024',
-    points: ['申请软件著作权', '项目进行最后的调整和优化', '整合各项技术'],
+    date: 'Jan 2026 - Mar 2026',
+    points: ['申请软件著作权和软件专利', '项目进行最后的调整和优化', '整合各项技术'],
   },
 ];
 
 const testimonials: TTestimonial[] = [
   {
     testimonial:
-      '湖北省高校计算机教育专委会秘书长。湖北省“优秀博士学位论文”获得者，湖北省委组织部“湖北省青年英才开发计划”首批培养对象，湖北省“科技创新源泉工程”创新创业人才。主要从事图像处理、计算机视觉、人工智能、深度学习等相关领域的研究。',
-    name: '谢伟',
-    designation: '副院长',
+      '主持国家自然科学基金青年项目和中央高校基本科研业务费资助项目等科研课题，参与承担湖北省自然科学基金委员会重点项目、国家自然科学基金重点项目等国家级、省部级课题等；以第一作者或通讯作者在IEEETransactionsonImageProcessing、IEEETransactionsonCSVT、Sensors、SignalProcessingLetters期刊、DCC、ICME等国际著名学术会议及学术期刊上发表论文10多篇，获软件著作权授权5项、发明专利授权1项。',
+    name: '钟睿',
+    designation: '副教授',
     company: '华中师范大学计算机学院',
-    image: 'https://i.im.ge/2024/03/11/R1PDJY.6.jpg',
+    image: 'http://t0yy8qojh.hn-bkt.clouddn.com/avatar/F64E82EDAAABDE3E2E6F6D7D2EE1542B.jpg',
   },
   {
     testimonial:
-      '毕业于中国科学院大学，获得信号与信息处理专业博士学位。担任多个 SCI 权威期刊审稿人。曾获中国科学院院长特别奖。主要研究方向为机器学习、深度学习、计算机视觉、图像处理。',
-    name: '孙昊',
-    designation: '教授',
+      '研究聚焦图像生成、能量模型、无/半监督学习及教育数据挖掘等领域。于2022年获美国佐治亚州立大学博士学位，本科毕业于厦门大学，兼具工业界与科研机构跨领域经验；以第一作者或通讯作者在IEEETNNLS、IEEETLT等国际权威期刊，以及ICML、EDM等顶级学术会议上发表论文10余篇，研究聚焦模型鲁棒性优化、对抗训练算法改进及教育数据应用等方向，提出的联合能量模型、XAT/XVAT算法等成果具有理论创新性与实践价值。',
+    name: '杨秀隆',
+    designation: '讲师',
     company: '华中师范大学计算机学院',
-    image: 'https://i.im.ge/2024/03/11/R1PUN4.3275b4e01d477b1e12ae24afc817908d.jpg',
-  },
-  {
-    testimonial:
-      '武汉大学计算机学院，计算机应用，研究生/硕士，主持和参与项目多项，发表多篇 EI论文。从事图像处理和物联网技术应用研究。',
-    name: '刘巍',
-    designation: '教授',
-    company: '华中师范大学计算机学院',
-    image: 'https://i.im.ge/2024/04/11/W4vb5W.image.png',
-  },
-  {
-    testimonial:
-      '管理学博士，华中师范大学教授、博士生导师，主要从事科研合作与性别差异、网络用户行为与运营策略等方面的教学与科研工作。曾到芬兰图尔库大学商学院以博士后身份学习交流一年。湖北省商务厅商务领域专项资金评审专家，湖北省电子商务研究中心副主任、湖北省“同心•院士专家服务团”专家、湖北省电子商务学会跨境电商分会副会长、湖北省电子商务行业协会电商智库专家，入选教育部全国万名优秀创新创业导师人才库，华中师范大学2020年“挑战杯”中国大学生创业计划大赛优秀指导教师。',
-    name: '谭春辉',
-    designation: '教授',
-    company: '华中师范大学信息管理学院',
-    image: 'https://i.im.ge/2024/04/11/W4vVdx.image.png',
-  },
-  {
-    testimonial:
-      '中共党员，现为华中师范大学信息管理学院团委书记、辅导员。',
-    name: '蒋可鸣',
-    designation: '辅导员',
-    company: '华中师范大学信息管理学院',
-    image: 'https://i.im.ge/2024/04/11/W44qrm.image.png',
+    image: 'http://t0yy8qojh.hn-bkt.clouddn.com/avatar/EAEB10E397644328A25A41C5BF69DDA2.jpg',
   },
   {
     testimonial:
@@ -240,23 +212,6 @@ const projects: TProject[] = [
     ],
     image: carrent,
     sourceCodeLink: 'https://github.com/OuYuHuaXia/Website-FE',
-  },
-  {
-    name: '移动应用',
-    description:
-      '采用了 MVC 模式将数据处理、用户界面和控制逻辑分离，提高代码的可维护性和扩展性。并使用了 Retrofit 框架，有效处理网络请求和数据交互。RecyclerView 可有效显示大量数据，并支持各种布局和交互方式，创建灵活的视图列表，以适应不同屏幕尺寸和设备方向。同时采用了 RadioGroup + ViewPager 的结构，使用户能够轻松切换不同的视图页面，并通过导航栏快速导航到应用的不同部分。',
-    tags: [
-      {
-        name: 'java',
-        color: 'orange-text-gradient',
-      },
-      {
-        name: 'xml',
-        color: 'green-text-gradient',
-      },
-    ],
-    image: jobit,
-    sourceCodeLink: 'https://github.com/OuYuHuaXia/OuYuHuaXia-Android',
   },
   {
     name: '后端服务',
