@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
 import {
   About,
@@ -15,6 +15,17 @@ import {
 } from "./components";
 import { useEffect } from "react";
 import { config } from "./constants/config";
+
+// 滚动到顶部组件
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 const HomePage = () => {
   return (
@@ -69,6 +80,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="bg-primary relative z-0">
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />

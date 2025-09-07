@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-import { SectionWrapper } from "../../hoc";
 import { fadeIn } from "../../utils/motion";
 import { Header } from "../atoms/Header";
-import { getUserVideos, VideosResponse } from "../../apis/videosAPI";
+import { getProcessedVideos, VideoSeries } from "../../apis/videosAPI";
+import { styles } from "../../constants/styles";
 
 const VideoClips = () => {
-  const [videos, setVideos] = useState<string[]>([]);
+  const [videoSeries, setVideoSeries] = useState<VideoSeries[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -17,17 +17,8 @@ const VideoClips = () => {
       setError(null);
       
       try {
-        const response: VideosResponse = await getUserVideos();
-        
-        if (response.code === 0) {
-          // 确保数据是字符串数组
-          const videoList = Array.isArray(response.data) 
-            ? response.data.filter(item => typeof item === 'string')
-            : [];
-          setVideos(videoList);
-        } else {
-          setError(response.message || '获取视频失败');
-        }
+        const processedData = await getProcessedVideos();
+        setVideoSeries(processedData);
       } catch (err) {
         console.error('API Error:', err);
         setError(err instanceof Error ? err.message : '网络连接错误');
@@ -40,7 +31,15 @@ const VideoClips = () => {
   }, []);
 
   return (
-    <>
+    <motion.section
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.25 }}
+      className={`${styles.padding} relative z-0 mx-auto max-w-7xl`}
+      id="videoclips"
+    >
+      <span className="hash-span">&nbsp;</span>
+      
       <Header 
         useMotion={true} 
         p="精彩内容"
@@ -82,68 +81,79 @@ const VideoClips = () => {
             </div>
           )}
 
-          {!loading && !error && videos.length === 0 && (
+          {!loading && !error && videoSeries.length === 0 && (
             <div className="text-center py-12">
               <p className="text-secondary text-[16px]">暂无视频内容</p>
             </div>
           )}
 
-          {!loading && !error && videos.length > 0 && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {videos.filter(url => url && typeof url === 'string').map((videoUrl, index) => (
-                <motion.div
-                  key={`video-${index}`}
-                  variants={fadeIn("up", "spring", index * 0.1, 0.75)}
-                  className="bg-black-200 rounded-xl overflow-hidden shadow-card"
-                >
-                  <div className="relative">
-                    {/* 检查是否是视频URL */}
-                    {videoUrl.includes('.mp4') || videoUrl.includes('.webm') || videoUrl.includes('.ogg') ? (
-                      <video 
-                        src={videoUrl}
-                        controls
-                        className="w-full h-48 object-cover"
-                        poster=""
-                      >
-                        您的浏览器不支持视频播放。
-                      </video>
-                    ) : (
-                      /* 如果不是视频文件，显示为链接 */
-                      <div className="w-full h-48 bg-gradient-to-br from-purple-900/30 to-blue-900/30 flex items-center justify-center">
-                        <div className="text-center">
-                          <div className="w-16 h-16 mx-auto mb-4 bg-white/10 rounded-full flex items-center justify-center">
-                            <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                              <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
-                              <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd"/>
-                            </svg>
+          {!loading && !error && videoSeries.length > 0 && (
+            <div className="space-y-8">
+              {/* 视频总数统计 */}
+              <div className="bg-gradient-to-r from-purple-900/30 to-blue-900/30 rounded-lg p-4 border border-purple-500/20">
+                <p className="text-white text-[16px]">
+                  共找到 <span className="text-[#e3d7b1] font-semibold">{videoSeries.reduce((total, series) => total + series.videos.length, 0)}</span> 个视频，
+                  分为 <span className="text-[#e3d7b1] font-semibold">{videoSeries.length}</span> 个剧目
+                </p>
+              </div>
+
+              {/* 简单的数字列表 */}
+              <div className="bg-tertiary rounded-2xl p-6">
+                <h4 className="text-white text-[20px] font-bold mb-6">视频列表</h4>
+                <div className="space-y-4">
+                  {videoSeries.map((series) => 
+                    series.videos.map((video, globalIndex) => {
+                      // 计算全局索引
+                      const prevVideosCount = videoSeries
+                        .slice(0, videoSeries.indexOf(series))
+                        .reduce((count, s) => count + s.videos.length, 0);
+                      const videoNumber = prevVideosCount + globalIndex + 1;
+                      
+                      return (
+                        <motion.div
+                          key={video.id}
+                          variants={fadeIn("up", "spring", globalIndex * 0.05, 0.5)}
+                          className="flex items-start gap-4 p-4 bg-black-100/30 rounded-lg hover:bg-black-100/50 transition-colors border border-gray-700/30"
+                        >
+                          {/* 数字标识 */}
+                          <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
+                            <span className="text-white font-bold text-[16px]">{videoNumber}</span>
                           </div>
-                          <p className="text-white text-sm">点击观看</p>
-                        </div>
-                      </div>
-                    )}
-                    
-                    {/* 视频覆盖层 */}
-                    <div className="absolute inset-0 bg-black/0 hover:bg-black/20 transition-colors cursor-pointer"
-                         onClick={() => window.open(videoUrl, '_blank')}>
-                    </div>
-                  </div>
-                  
-                  <div className="p-4">
-                    <h4 className="text-white text-[16px] font-semibold mb-2">
-                      芗剧片段 {index + 1}
-                    </h4>
-                    <p className="text-secondary text-[14px] truncate">
-                      {typeof videoUrl === 'string' ? videoUrl : 'Invalid URL'}
-                    </p>
-                    <button
-                      onClick={() => window.open(videoUrl, '_blank')}
-                      className="mt-3 px-4 py-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white text-sm rounded-lg hover:from-purple-600 hover:to-blue-600 transition-colors"
-                    >
-                      观看视频
-                    </button>
-                  </div>
-                </motion.div>
-              ))}
+                          
+                          {/* 视频信息 */}
+                          <div className="flex-1 min-w-0">
+                            <h5 className="text-white text-[16px] font-semibold mb-2">
+                              {video.title}
+                            </h5>
+                            <p className="text-secondary text-[14px] mb-2">
+                              剧目：{series.seriesName} | 第 {video.episode} 集
+                            </p>
+                            <div className="bg-black-200 rounded p-2 mb-3">
+                              <p className="text-[#e3d7b1] text-[12px] font-mono break-all">
+                                {video.url}
+                              </p>
+                            </div>
+                            <div className="flex gap-2">
+                              <button
+                                onClick={() => window.open(video.url, '_blank')}
+                                className="px-3 py-1 bg-gradient-to-r from-green-500 to-green-600 text-white text-[12px] rounded hover:from-green-600 hover:to-green-700 transition-colors"
+                              >
+                                播放视频
+                              </button>
+                              <button
+                                onClick={() => navigator.clipboard.writeText(video.url)}
+                                className="px-3 py-1 bg-gradient-to-r from-gray-500 to-gray-600 text-white text-[12px] rounded hover:from-gray-600 hover:to-gray-700 transition-colors"
+                              >
+                                复制链接
+                              </button>
+                            </div>
+                          </div>
+                        </motion.div>
+                      );
+                    })
+                  )}
+                </div>
+              </div>
             </div>
           )}
         </motion.div>
@@ -160,8 +170,8 @@ const VideoClips = () => {
           </p>
         </motion.div>
       </div>
-    </>
+    </motion.section>
   );
 };
 
-export default SectionWrapper(VideoClips, "videoclips");
+export default VideoClips;
