@@ -21,8 +21,9 @@ const ServiceCard: React.FC<IServiceCard> = ({ index, title, icon }) => {
   const handleClick = () => {
     if (title === '文化科普') {
       navigate('/culture');
+    } else if (title === '片段欣赏') {
+      navigate('/videoclips');
     }
-    // 其他卡片暂时不处理点击事件
   };
 
   return (
@@ -40,7 +41,7 @@ const ServiceCard: React.FC<IServiceCard> = ({ index, title, icon }) => {
         >
           <div 
             className={`bg-tertiary flex min-h-[280px] flex-col items-center justify-evenly rounded-[20px] px-12 py-5 ${
-              title === '文化科普' ? 'cursor-pointer hover:bg-tertiary/80 transition-colors' : ''
+              (title === '文化科普' || title === '片段欣赏') ? 'cursor-pointer hover:bg-tertiary/80 transition-colors' : ''
             }`}
             onClick={handleClick}
           >

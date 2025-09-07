@@ -10,6 +10,7 @@ import {
   Tech,
   Works,
   Culture,
+  VideoClips,
   StarsCanvas,
 } from "./components";
 import { useEffect } from "react";
@@ -46,6 +47,18 @@ const CulturePage = () => {
   );
 };
 
+// 片段欣赏页面组件
+const VideoClipsPage = () => {
+  return (
+    <div className="pt-[120px]">
+      <VideoClips />
+      <div className="relative z-0">
+        <StarsCanvas />
+      </div>
+    </div>
+  );
+};
+
 const App = () => {
   useEffect(() => {
     if (document.title !== config.html.title) {
@@ -60,6 +73,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/culture" element={<CulturePage />} />
+          <Route path="/videoclips" element={<VideoClipsPage />} />
         </Routes>
       </div>
     </BrowserRouter>
