@@ -30,6 +30,11 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
+import cultureIcon from "./文化科普3.png";
+import videoIcon from "./片段欣赏3.png";
+import experienceIcon from "./情景体验3.png";
+import profileIcon from "./个人中心3.png";
+
 export {
   logo,
   backend,
@@ -59,4 +64,8 @@ export {
   carrent,
   jobit,
   tripguide,
+  cultureIcon,
+  videoIcon,
+  experienceIcon,
+  profileIcon,
 };

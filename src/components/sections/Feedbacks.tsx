@@ -17,7 +17,7 @@ const FeedbackCard: React.FC<{ index: number } & TTestimonial> = ({
 }) => (
   <motion.div
     variants={fadeIn("", "spring", index * 0.5, 0.75)}
-    className="bg-black-200 xs:w-[320px] w-full rounded-3xl p-10"
+    className="bg-black-200 xs:w-[500px] w-full rounded-3xl p-10"
   >
     <p className="text-[48px] font-black text-white">"</p>
 

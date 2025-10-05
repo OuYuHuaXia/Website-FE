@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { styles } from "../../constants/styles";
 import { navLinks } from "../../constants";
@@ -10,6 +10,7 @@ const Navbar = () => {
   const [active, setActive] = useState<string | null>();
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -78,7 +79,17 @@ const Navbar = () => {
                 active === nav.id ? "text-white" : "text-secondary"
               } cursor-pointer text-[18px] hover:text-white font-bold`}
             >
-              <a href={`#${nav.id}`}>{nav.title}</a>
+              <a 
+                href={`#${nav.id}`}
+                onClick={(e) => {
+                  if (location.pathname !== '/') {
+                    e.preventDefault();
+                    window.location.href = `/#${nav.id}`;
+                  }
+                }}
+              >
+                {nav.title}
+              </a>
             </li>
           ))}
         </ul>
@@ -107,7 +118,17 @@ const Navbar = () => {
                     setToggle(!toggle);
                   }}
                 >
-                  <a href={`#${nav.id}`}>{nav.title}</a>
+                  <a 
+                    href={`#${nav.id}`}
+                    onClick={(e) => {
+                      if (location.pathname !== '/') {
+                        e.preventDefault();
+                        window.location.href = `/#${nav.id}`;
+                      }
+                    }}
+                  >
+                    {nav.title}
+                  </a>
                 </li>
               ))}
             </ul>
