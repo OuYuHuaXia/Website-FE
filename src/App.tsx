@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 
 import {
   About,
@@ -12,9 +12,9 @@ import {
   Culture,
   VideoClips,
   StarsCanvas,
-} from "./components";
-import { useEffect } from "react";
-import { config } from "./constants/config";
+} from './components';
+import { useEffect } from 'react';
+import { config } from './constants/config';
 
 // 滚动到顶部组件
 const ScrollToTop = () => {

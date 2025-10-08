@@ -42,7 +42,7 @@ export const processVideoData = (rawUrls: string[]): VideoSeries[] => {
   const processedVideos: ProcessedVideo[] = videoUrls.map((url, index) => {
     // 提取文件名
     const fileName = url.split('/').pop() || '';
-    
+
     // 解析文件名，提取剧目名称和集数
     let series = '';
     let episode = 1;
@@ -68,13 +68,13 @@ export const processVideoData = (rawUrls: string[]): VideoSeries[] => {
       url: url,
       series: series,
       episode: episode,
-      originalFileName: fileName
+      originalFileName: fileName,
     };
   });
 
   // 3. 按剧目分组
   const seriesMap = new Map<string, ProcessedVideo[]>();
-  
+
   processedVideos.forEach(video => {
     if (!seriesMap.has(video.series)) {
       seriesMap.set(video.series, []);
@@ -83,10 +83,12 @@ export const processVideoData = (rawUrls: string[]): VideoSeries[] => {
   });
 
   // 4. 转换为数组并排序
-  const videoSeries: VideoSeries[] = Array.from(seriesMap.entries()).map(([seriesName, videos]) => ({
-    seriesName,
-    videos: videos.sort((a, b) => a.episode - b.episode) // 按集数排序
-  }));
+  const videoSeries: VideoSeries[] = Array.from(seriesMap.entries()).map(
+    ([seriesName, videos]) => ({
+      seriesName,
+      videos: videos.sort((a, b) => a.episode - b.episode), // 按集数排序
+    })
+  );
 
   // 按剧目名称排序
   return videoSeries.sort((a, b) => a.seriesName.localeCompare(b.seriesName));

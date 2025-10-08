@@ -11,10 +11,10 @@ const VideosList = () => {
     const fetchVideos = async () => {
       setLoading(true);
       setError(null);
-      
+
       try {
         const response: VideosResponse = await getUserVideos();
-        
+
         if (response.code === 0) {
           setVideos(response.data);
         } else {

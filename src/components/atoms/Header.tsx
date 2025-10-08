@@ -1,8 +1,8 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React from 'react';
+import { motion } from 'framer-motion';
 
-import { styles } from "../../constants/styles";
-import { textVariant } from "../../utils/motion";
+import { styles } from '../../constants/styles';
+import { textVariant } from '../../utils/motion';
 
 interface IHeader {
   useMotion: boolean;

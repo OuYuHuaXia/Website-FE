@@ -137,10 +137,7 @@ const experiences: TExperience[] = [
     icon: tesla,
     iconBg: '#E6DEDD',
     date: 'Apr 2025 - Aug 2025',
-    points: [
-      '学习项目技术',
-      '与台湾掌中剧团签订合作协议书',
-    ],
+    points: ['学习项目技术', '与台湾掌中剧团签订合作协议书'],
   },
   {
     title: '项目打磨',
@@ -148,11 +145,7 @@ const experiences: TExperience[] = [
     icon: shopify,
     iconBg: '#383E56',
     date: 'Sep 2025 - Dec 2025',
-    points: [
-      '参访台湾掌中剧团',
-      '项目打磨：优化项目设计和实施方案',
-      '更新技术',
-    ],
+    points: ['参访台湾掌中剧团', '项目打磨：优化项目设计和实施方案', '更新技术'],
   },
   {
     title: '项目尾声',

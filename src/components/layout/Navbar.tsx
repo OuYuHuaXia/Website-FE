@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
-import { styles } from "../../constants/styles";
-import { navLinks } from "../../constants";
-import { logo, menu, close } from "../../assets";
-import { config } from "../../constants/config";
+import { styles } from '../../constants/styles';
+import { navLinks } from '../../constants';
+import { logo, menu, close } from '../../assets';
+import { config } from '../../constants/config';
 
 const Navbar = () => {
   const [active, setActive] = useState<string | null>();
@@ -19,21 +19,20 @@ const Navbar = () => {
         setScrolled(true);
       } else {
         setScrolled(false);
-        setActive("");
+        setActive('');
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     const navbarHighlighter = () => {
-      const sections = document.querySelectorAll("section[id]");
+      const sections = document.querySelectorAll('section[id]');
 
-      sections.forEach((current) => {
-        const sectionId = current.getAttribute("id");
+      sections.forEach(current => {
+        const sectionId = current.getAttribute('id');
         // @ts-ignore
         const sectionHeight = current.offsetHeight;
-        const sectionTop =
-          current.getBoundingClientRect().top - sectionHeight * 0.2;
+        const sectionTop = current.getBoundingClientRect().top - sectionHeight * 0.2;
 
         if (sectionTop < 0 && sectionTop + sectionHeight > 0) {
           setActive(sectionId);
@@ -41,20 +40,18 @@ const Navbar = () => {
       });
     };
 
-    window.addEventListener("scroll", navbarHighlighter);
+    window.addEventListener('scroll', navbarHighlighter);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("scroll", navbarHighlighter);
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', navbarHighlighter);
     };
   }, []);
 
   return (
     <nav
-      className={`${
-        styles.paddingX
-      } fixed top-0 z-20 flex w-full items-center py-5 ${
-        scrolled ? "bg-primary" : "bg-transparent"
+      className={`${styles.paddingX} fixed top-0 z-20 flex w-full items-center py-5 ${
+        scrolled ? 'bg-primary' : 'bg-transparent'
       }`}
     >
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between">
@@ -72,16 +69,16 @@ const Navbar = () => {
         </Link>
 
         <ul className="hidden list-none flex-row gap-10 sm:flex">
-          {navLinks.map((nav) => (
+          {navLinks.map(nav => (
             <li
               key={nav.id}
               className={`${
-                active === nav.id ? "text-white" : "text-secondary"
+                active === nav.id ? 'text-white' : 'text-secondary'
               } cursor-pointer text-[18px] hover:text-white font-bold`}
             >
-              <a 
+              <a
                 href={`#${nav.id}`}
-                onClick={(e) => {
+                onClick={e => {
                   if (location.pathname !== '/') {
                     e.preventDefault();
                     window.location.href = `/#${nav.id}`;
@@ -104,23 +101,23 @@ const Navbar = () => {
 
           <div
             className={`${
-              !toggle ? "hidden" : "flex"
+              !toggle ? 'hidden' : 'flex'
             } black-gradient absolute right-0 top-20 z-10 mx-4 my-2 min-w-[140px] rounded-xl p-6`}
           >
             <ul className="flex flex-1 list-none flex-col items-start justify-end gap-4">
-              {navLinks.map((nav) => (
+              {navLinks.map(nav => (
                 <li
                   key={nav.id}
                   className={`font-poppins cursor-pointer text-[16px] font-medium ${
-                    active === nav.id ? "text-white" : "text-secondary"
+                    active === nav.id ? 'text-white' : 'text-secondary'
                   }`}
                   onClick={() => {
                     setToggle(!toggle);
                   }}
                 >
-                  <a 
+                  <a
                     href={`#${nav.id}`}
-                    onClick={(e) => {
+                    onClick={e => {
                       if (location.pathname !== '/') {
                         e.preventDefault();
                         window.location.href = `/#${nav.id}`;

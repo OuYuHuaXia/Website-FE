@@ -1,16 +1,13 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
-import { styles } from "../constants/styles";
+import { styles } from '../constants/styles';
 
 interface Props {
   Component: React.ElementType;
   idName: string;
 }
 
-const SectionWrapper = (
-  Component: Props["Component"],
-  idName: Props["idName"]
-) =>
+const SectionWrapper = (Component: Props['Component'], idName: Props['idName']) =>
   function HOC() {
     return (
       <motion.section
